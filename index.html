@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supraja Adam | CSE Student & Aspiring Software Developer</title>
+
+    <meta name="description"
+          content="Portfolio of Supraja Adam, a Computer Science Engineering student and aspiring software developer.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5b4bdb;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5b4bdb;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background: linear-gradient(135deg, #eef0ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .hero h1 span {
+            color: #5b4bdb;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 8px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #5b4bdb;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #4638b8;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 2px solid #5b4bdb;
+            color: #5b4bdb;
+        }
+
+        .secondary-btn:hover {
+            background: #5b4bdb;
+            color: white;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 45px;
+            color: #222;
+        }
+
+        .section-title span {
+            color: #5b4bdb;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            background: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            font-weight: 600;
+            color: #444;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+            color: #5b4bdb;
+        }
+
+        /* PROJECTS */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .project-card h3 {
+            color: #5b4bdb;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .project-btn {
+            text-decoration: none;
+            color: #5b4bdb;
+            font-weight: bold;
+        }
+
+        /* EDUCATION */
+        .education-card {
+            background: white;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #5b4bdb;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        /* ACTIVITIES */
+        .activities {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .activity {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #5b4bdb;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #eef0ff;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            margin: 8px;
+            text-decoration: none;
+            color: #5b4bdb;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #222;
+            color: white;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Supraja</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hi, I'm <span>Supraja</span> 👋</h1>
+
+            <h2>Computer Science Engineering Student</h2>
+
+            <p>
+                Aspiring Software Developer passionate about learning
+                Java, Data Structures & Algorithms, and building
+                practical software solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary-btn">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about">
+
+            <p>
+                I am a third-year B.Tech Computer Science Engineering
+                student at Shree Siddheshwar Women's College of
+                Engineering, Solapur.
+            </p>
+
+            <br>
+
+            <p>
+                I am interested in software development and currently
+                strengthening my skills in Java, Data Structures &
+                Algorithms, web development, and databases.
+            </p>
+
+            <br>
+
+            <p>
+                I enjoy learning new technologies, participating in
+                technical events, and working on projects that help
+                me improve my practical skills.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Java</div>
+            <div class="skill">C</div>
+            <div class="skill">Python</div>
+            <div class="skill">Data Structures & Algorithms</div>
+            <div class="skill">SQL</div>
+            <div class="skill">GitHub</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects-container">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+
+                <h3>Customer Churn Prediction</h3>
+
+                <p>
+                    A machine learning project that predicts whether
+                    a customer is likely to leave a service based on
+                    customer-related data.
+                </p>
+
+                <a href="https://github.com/suprajaadam4-a11y/CODEC-Artificial-intelligence-Internship"
+                   target="_blank"
+                   class="project-btn">
+                    View Project →
+                </a>
+
+            </div>
+
+
+           
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education-card">
+
+            <h3>B.Tech – Computer Science Engineering</h3>
+
+            <p>
+                Shree Siddheshwar Women's College of Engineering,
+                Solapur
+            </p>
+
+            <p>
+                Currently in 3rd Year
+            </p>
+
+            <p>
+                Affiliated to Dr. Babasaheb Ambedkar Technological
+                University (DBATU)
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTIVITIES -->
+    <section id="activities">
+
+        <h2 class="section-title">
+            Activities & <span>Participation</span>
+        </h2>
+
+        <div class="activities">
+
+            <div class="activity">
+                <strong>Codathon</strong>
+                <p>
+                    Participated in a Codathon event and gained
+                    experience in problem-solving and coding.
+                </p>
+            </div>
+
+            <div class="activity">
+                <strong>Technical Events</strong>
+                <p>
+                    Participated in technical events and activities
+                    to improve technical knowledge and teamwork.
+                </p>
+            </div>
+
+            <div class="activity">
+                <strong>Hackathon Participation</strong>
+                <p>
+                    Participated in hackathon activities and explored
+                    technology-based solutions to real-world problems.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Get In <span>Touch</span>
+        </h2>
+
+        <p>
+            I am open to learning opportunities, internships,
+            projects, and collaborations.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:suprajaadam4@gmail.com">
+                📧 Email
+            </a>
+
+            <a href="www.linkedin.com/in/supraja-adam-0a554a384"
+               target="_blank">
+                🔗 LinkedIn
+            </a>
+
+            <a href="https://github.com/suprajaadam4-a11y"
+               target="_blank">
+                💻 GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Supraja Adam | Built with HTML & CSS
+        </p>
+
+    </footer>
+
+</body>
+</html>
